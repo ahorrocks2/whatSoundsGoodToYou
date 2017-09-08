@@ -5,7 +5,7 @@ import './App.css';
 import AddRestaurant from './AddRestaurant';
 import HeaderPresenter from './HeaderPresenter';
 import DisplayFavoriteRestaurant from './DisplayFavoriteRestaurant';
-import DisplayRouletteResult from './DisplayRouletteResult';
+import Roulette from './Roulette';
 
 class App extends Component {
 	state = {
@@ -47,13 +47,6 @@ class App extends Component {
 				<HeaderPresenter />
 				<AddRestaurant addFavorite={this.handleAddFavorite} />
 
-				{
-					(this.state.restaurants.length > 0) ?
-					<button	onClick={() => this.selectRandomRestaurant(this.state.restaurants.length)}>ROULETTE</button>
-					:
-					<div><h1>Add some restaurants!</h1></div>
-				}
-				<DisplayRouletteResult resultObject={this.state.randomRestaurant} />
 				<div>
 					{this.state.restaurants.map(restaurant => {
 						return (
@@ -64,6 +57,13 @@ class App extends Component {
 						);
 					})}
 				</div>
+
+				<Roulette
+					restaurants={this.state.restaurants}
+					resultObject={this.state.randomRestaurant}
+					handleRestaurantRoulette={() => this.selectRandomRestaurant(this.state.restaurants.length)}
+				/>
+
 			</div>
 		);
 	}
