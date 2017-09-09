@@ -1,4 +1,5 @@
 import React from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const Roulette = props => {
   const result = props.resultObject.name ? true : false;
@@ -6,8 +7,7 @@ const Roulette = props => {
 	return (
 		<div className="App">
       {
-        (props.restaurants.length > 0) ? <button onClick={props.handleRestaurantRoulette}>ROULETTE</button>
-        : <div><h1>Add some restaurants!</h1></div>
+        (props.restaurants.length > 0) && <RaisedButton onClick={props.handleRestaurantRoulette} label='ROULETTE' />
       }
 			{result && <h1>You must go to: {props.resultObject.name}</h1>}
 		</div>

@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { List } from 'material-ui/List';
+
+
 import './App.css';
+
+import PropTypes from 'prop-types';
 
 import AddRestaurant from './AddRestaurant';
 import HeaderPresenter from './HeaderPresenter';
@@ -34,7 +39,6 @@ class App extends Component {
 			const randomIndex = Math.floor(Math.random() * (max + 1));
 			const randomRestaurant = state.restaurants[randomIndex];
 
-			debugger;
 			return {
 				randomRestaurant
 			};
@@ -43,28 +47,29 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
-				<HeaderPresenter />
-				<AddRestaurant addFavorite={this.handleAddFavorite} />
+			<MuiThemeProvider>
+				<div className="App">
+					<HeaderPresenter />
+					<AddRestaurant addFavorite={this.handleAddFavorite} />
 
-				<div>
-					{this.state.restaurants.map(restaurant => {
-						return (
-							<DisplayFavoriteRestaurant
-								key={restaurant.id}
-								restaurant={restaurant}
-							/>
-						);
-					})}
+					<List>
+						{this.state.restaurants.map(restaurant => {
+							return (
+								<DisplayFavoriteRestaurant
+									key={restaurant.id}
+									restaurant={restaurant}
+									/>
+							);
+						})}
+					</List>
+
+					<Roulette
+						restaurants={this.state.restaurants}
+						resultObject={this.state.randomRestaurant}
+						handleRestaurantRoulette={() => this.selectRandomRestaurant(this.state.restaurants.length)}
+						/>
 				</div>
-
-				<Roulette
-					restaurants={this.state.restaurants}
-					resultObject={this.state.randomRestaurant}
-					handleRestaurantRoulette={() => this.selectRandomRestaurant(this.state.restaurants.length)}
-				/>
-
-			</div>
+			</MuiThemeProvider>
 		);
 	}
 }

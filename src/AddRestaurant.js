@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+
 import PropTypes from 'prop-types';
 
 const BLANK_RESTAURANT = {
@@ -39,8 +42,9 @@ class AddRestaurant extends Component {
       <div className="App">
         <form>
           <div>
-            <label>Name of Place: </label>
-            <input
+            <TextField
+              hintText='Restaurant Name'
+              underlineFocusStyle={{borderColor: '#9FA8DA'}}
               name='name'
               value={this.state.name}
               onChange={(e) => this.handleChange(e, "name")}
@@ -48,8 +52,9 @@ class AddRestaurant extends Component {
           </div>
 
           <div>
-            <label>Type of Food: </label>
-            <input
+            <TextField
+              hintText='Food Type'
+              underlineFocusStyle={{borderColor: '#5C6BC0'}}
               name='type'
               value={this.state.type}
               onChange={(e) => this.handleChange(e, "type")}
@@ -57,15 +62,16 @@ class AddRestaurant extends Component {
           </div>
 
           <div>
-            <label>Neighborhood: </label>
-            <input
+            <TextField
+              hintText='Neighborhood'
+              underlineFocusStyle={{borderColor: '#3949AB'}}
               name='hood'
               value={this.state.hood}
               onChange={(e) => this.handleChange(e, "hood")}
             />
           </div>
 
-          <button type='submit' onClick={this.handleSubmit}>Add</button>
+          <RaisedButton default={true} type='submit' onClick={this.handleSubmit} label='Add Restuarant' />
         </form>
       </div>
     );

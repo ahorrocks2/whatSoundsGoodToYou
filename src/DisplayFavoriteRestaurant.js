@@ -1,9 +1,11 @@
 import React from 'react';
+import { ListItem } from 'material-ui/List';
+
 
 const ListFavorites = props => {
 	return (
 		<div className="App">
-			<h1>{props.restaurant.name}</h1>
+			<ListItem><h2>{props.restaurant.name}</h2></ListItem>
 		</div>
 	);
 };
