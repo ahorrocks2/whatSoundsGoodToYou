@@ -32,6 +32,8 @@ class AddRestaurant extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
+    if(this.state.name === '') return;
+
     this.props.addFavorite(this.state);
 
     this.setState(BLANK_RESTAURANT)
