@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { List } from 'material-ui/List';
-
 
 import './App.css';
 
@@ -52,16 +50,14 @@ class App extends Component {
 					<HeaderPresenter />
 					<AddRestaurant addFavorite={this.handleAddFavorite} />
 
-					<List>
-						{this.state.restaurants.map(restaurant => {
-							return (
-								<DisplayFavoriteRestaurant
-									key={restaurant.id}
-									restaurant={restaurant}
-									/>
-							);
-						})}
-					</List>
+					{this.state.restaurants.map(restaurant => {
+						return (
+							<DisplayFavoriteRestaurant
+								key={restaurant.id}
+								restaurant={restaurant}
+								/>
+						);
+					})}
 
 					<Roulette
 						restaurants={this.state.restaurants}
