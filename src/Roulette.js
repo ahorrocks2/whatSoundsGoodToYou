@@ -9,7 +9,7 @@ const Roulette = props => {
       {
         (props.restaurants.length > 0) && <RaisedButton onClick={props.handleRestaurantRoulette} label='ROULETTE' />
       }
-			{result && <h1>You must go to: {props.resultObject.name}</h1>}
+			{result && <h1>You must go to: {props.resultObject.name} in {props.resultObject.hood}</h1>}
 		</div>
 	);
 };
