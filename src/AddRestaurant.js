@@ -31,9 +31,15 @@ class AddRestaurant extends Component {
     });
   }
 
-  handleSelect = (event, index, value) => {
+  handleHoodChange = (event, index, value) => {
     this.setState({
       hood: value
+    });
+  }
+
+  handleFoodTypeChange = (event, index, value) => {
+    this.setState({
+      type: value
     });
   }
 
@@ -62,21 +68,35 @@ class AddRestaurant extends Component {
           </div>
 
           <div>
-            <TextField
+            <SelectField
               hintText='Food Type'
               underlineFocusStyle={{borderColor: '#5C6BC0'}}
               name='type'
               value={this.state.type}
-              onChange={(e) => this.handleChange(e, "type")}
-            />
+              onChange={this.handleFoodTypeChange}
+            >
+              <MenuItem value="Indian" primaryText="Indian" />
+              <MenuItem value="Chinese" primaryText="Chinese" />
+              <MenuItem value="American" primaryText="American" />
+              <MenuItem value="Thai" primaryText="Thai" />
+              <MenuItem value="Breakfast" primaryText="Breakfast" />
+              <MenuItem value="Vietnamese" primaryText="Vietnamese" />
+              <MenuItem value="Japanese" primaryText="Japanese" />
+              <MenuItem value="Mexican" primaryText="Mexican" />
+              <MenuItem value="Russian" primaryText="Russian" />
+              <MenuItem value="Italian" primaryText="Italian" />
+              <MenuItem value="French" primaryText="French" />
+              <MenuItem value="Greek" primaryText="Greek" />
+            </SelectField>
           </div>
 
           <div>
             <SelectField
               hintText='Neighborhood'
+              underlineFocusStyle={{borderColor: '#3949AB'}}
               name='hood'
               value={this.state.hood}
-              onChange={this.handleSelect}
+              onChange={this.handleHoodChange}
             >
               <MenuItem value="Northwest" primaryText="Northwest" />
               <MenuItem value="Northeast" primaryText="Northeast" />
