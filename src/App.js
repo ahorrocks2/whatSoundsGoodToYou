@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import rp from 'request-promise';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import './App.css';
@@ -13,7 +14,8 @@ import Roulette from './Roulette';
 class App extends Component {
 	state = {
 		restaurants: [],
-		randomRestaurant: {}
+		randomRestaurant: {},
+		menuUrl: ''
 	};
 
 	static PropTypes = {
@@ -43,6 +45,34 @@ class App extends Component {
 		});
 	};
 
+	generateRandomRestaurant = async () => {
+		const listOfRestaurants = await rp({
+			method: 'GET',
+			uri: 'https://developers.zomato.com/api/v2.1/search?entity_id=286&entity_type=city&count=20&lat=-122.6804827&lon=45.5505162&radius=4000',
+			headers: {
+				'Accept': 'application/json',
+				'user-key': API_KEY
+			},
+			json: true
+		});
+
+		const randomIndex = Math.floor(Math.random() * 20);
+		const restaurant = listOfRestaurants.restaurants[randomIndex].restaurant;
+
+		const randomRestaurant = {
+			name: restaurant.name,
+			type: restaurant.cuisines,
+			hood: restaurant.location.locality
+		}
+
+		this.setState(state => {
+			return {
+				randomRestaurant,
+				menuUrl: restaurant.menu_url
+			}
+		});
+	}
+
 	render() {
 		return (
 			<MuiThemeProvider>
@@ -62,8 +92,10 @@ class App extends Component {
 					<Roulette
 						restaurants={this.state.restaurants}
 						resultObject={this.state.randomRestaurant}
+						menuUrl={this.state.menuUrl}
 						handleRestaurantRoulette={() => this.selectRandomRestaurant(this.state.restaurants.length)}
-						/>
+						generateRandomRestaurant={() => this.generateRandomRestaurant()}
+					/>
 				</div>
 			</MuiThemeProvider>
 		);
