@@ -11,6 +11,8 @@ import HeaderPresenter from './HeaderPresenter';
 import DisplayFavoriteRestaurant from './DisplayFavoriteRestaurant';
 import Roulette from './Roulette';
 
+let API_KEY = 'ba91e2f7b4c7b52bef1710bd85500437';
+
 class App extends Component {
 	state = {
 		restaurants: [],
