@@ -42,7 +42,8 @@ class App extends Component {
 			const randomRestaurant = state.restaurants[randomIndex];
 
 			return {
-				randomRestaurant
+				randomRestaurant,
+				menuUrl: ''
 			};
 		});
 	};
