@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+import { Button } from 'semantic-ui-react';
+import { Dropdown } from 'semantic-ui-react';
+import { Input } from 'semantic-ui-react'
 
 import PropTypes from 'prop-types';
 
@@ -53,14 +52,36 @@ class AddRestaurant extends Component {
     this.setState(BLANK_RESTAURANT)
   }
 
+
   render() {
+    const foodTypes = [
+      { key: 'Indian', value: 'Indian', text: 'Indian' },
+      { key: 'Chinese', value: 'Chinese', text: 'Chinese' },
+      { key: 'American', value: 'American', text: 'American' },
+      { key: 'Thai', value: 'Thai', text: 'Thai' },
+      { key: 'Breakfast/Brunch', value: 'Breakfast/Brunch', text: 'Breakfast/Brunch' },
+      { key: 'Vietnamese', value: 'Vietnamese', text: 'Vietnamese' },
+      { key: 'Japanese', value: 'Japanese', text: 'Japanese' },
+      { key: 'Mexican', value: 'Mexican', text: 'Mexican' },
+      { key: 'Russian', value: 'Russian', text: 'Russian' },
+      { key: 'Italian', value: 'Italian', text: 'Italian' },
+      { key: 'French', value: 'French', text: 'French' },
+      { key: 'Greek', value: 'Greek', text: 'Greek' },
+    ];
+
+    const neighborhoods = [
+      { key: 'Northwest', value: 'Northwest', text: 'Northwest' },
+      { key: 'Northeast', value: 'Northeast', text: 'Northeast' },
+      { key: 'Southwest', value: 'Southwest', text: 'Southwest' },
+      { key: 'Southeast', value: 'Southeast', text: 'Southeast' },
+    ];
+
     return (
       <div className="App">
         <form>
           <div>
-            <TextField
-              hintText='Restaurant Name'
-              underlineFocusStyle={{borderColor: '#9FA8DA'}}
+            <Input
+              placeholder='Restaurant Name'
               name='name'
               value={this.state.name}
               onChange={(e) => this.handleChange(e, "name")}
@@ -68,45 +89,30 @@ class AddRestaurant extends Component {
           </div>
 
           <div>
-            <SelectField
-              hintText='Food Type'
-              underlineFocusStyle={{borderColor: '#5C6BC0'}}
+            <Dropdown
+              placeholder='Food Type'
+              selection
+              search
+              options={foodTypes}
               name='type'
-              value={this.state.type}
+              default={this.state.type}
               onChange={this.handleFoodTypeChange}
             >
-              <MenuItem value="Indian" primaryText="Indian" />
-              <MenuItem value="Chinese" primaryText="Chinese" />
-              <MenuItem value="American" primaryText="American" />
-              <MenuItem value="Thai" primaryText="Thai" />
-              <MenuItem value="Breakfast" primaryText="Breakfast" />
-              <MenuItem value="Vietnamese" primaryText="Vietnamese" />
-              <MenuItem value="Japanese" primaryText="Japanese" />
-              <MenuItem value="Mexican" primaryText="Mexican" />
-              <MenuItem value="Russian" primaryText="Russian" />
-              <MenuItem value="Italian" primaryText="Italian" />
-              <MenuItem value="French" primaryText="French" />
-              <MenuItem value="Greek" primaryText="Greek" />
-            </SelectField>
+            </Dropdown>
           </div>
 
           <div>
-            <SelectField
-              hintText='Neighborhood'
-              underlineFocusStyle={{borderColor: '#3949AB'}}
-              name='hood'
-              value={this.state.hood}
+            <Dropdown
+              placeholder='Neighborhood'
+              selection
+              options={neighborhoods}
+              name='type'
+              default={this.state.hood}
               onChange={this.handleHoodChange}
             >
-              <MenuItem value="Northwest" primaryText="Northwest" />
-              <MenuItem value="Northeast" primaryText="Northeast" />
-              <MenuItem value="Southwest" primaryText="Southwest" />
-              <MenuItem value="Southeast" primaryText="Southeast" />
-              <MenuItem value="North Portland" primaryText="North Portland" />
-            </SelectField>
+            </Dropdown>
           </div>
-
-          <RaisedButton default={true} type='submit' onClick={this.handleSubmit} label='Add Restuarant' />
+          <Button basic color="blue" type='submit' onClick={this.handleSubmit}>Add Restaurant</Button>
         </form>
       </div>
     );

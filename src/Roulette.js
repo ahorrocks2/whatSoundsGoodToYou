@@ -1,5 +1,5 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import { Button } from 'semantic-ui-react'
 
 const Roulette = props => {
   const result = props.resultObject.name ? true : false;
@@ -9,11 +9,11 @@ const Roulette = props => {
 		<div className="App">
       <div>
         {
-          (props.restaurants.length > 0) && <RaisedButton onClick={props.handleRestaurantRoulette} label='ROULETTE' />
+          (props.restaurants.length > 0) && <Button basic color='teal' onClick={props.handleRestaurantRoulette}>ROULETTE!</Button>
         }
       </div>
       <div>
-        <RaisedButton onClick={props.generateRandomRestaurant} label='RANDOM' />
+        <Button basic color='teal' onClick={props.generateRandomRestaurant}>Random</Button>
       </div>
 
 			{result && <h1>You must go to: {props.resultObject.name}</h1>}
