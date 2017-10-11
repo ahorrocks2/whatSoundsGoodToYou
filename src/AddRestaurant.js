@@ -28,15 +28,15 @@ class AddRestaurant extends Component {
     });
   }
 
-  handleHoodChange = (event, index, value) => {
+  handleHoodChange = (event) => {
     this.setState({
-      hood: value
+      hood: event.target.textContent
     });
   }
 
-  handleFoodTypeChange = (event, index, value) => {
+  handleFoodTypeChange = (event) => {
     this.setState({
-      type: value
+      type: event.target.textContent
     });
   }
 
@@ -94,7 +94,7 @@ class AddRestaurant extends Component {
               options={foodTypes}
               name='type'
               value={this.state.type}
-              onChange={this.handleFoodTypeChange}
+              onChange={(e) => this.handleFoodTypeChange(e)}
             >
             </Form.Field>
           </div>
@@ -106,7 +106,7 @@ class AddRestaurant extends Component {
               options={neighborhoods}
               name='type'
               value={this.state.hood}
-              onChange={this.handleHoodChange}
+              onChange={(e) => this.handleHoodChange(e)}
             >
             </Form.Field>
           </div>
