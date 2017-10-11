@@ -30,15 +30,15 @@ class AddRestaurant extends Component {
     });
   }
 
-  handleHoodChange = (event, index, value) => {
+  handleHoodChange = (event) => {
     this.setState({
-      hood: value
+      hood: event.target.textContent
     });
   }
 
-  handleFoodTypeChange = (event, index, value) => {
+  handleFoodTypeChange = (event) => {
     this.setState({
-      type: value
+      type: event.target.textContent
     });
   }
 
@@ -95,8 +95,8 @@ class AddRestaurant extends Component {
               search
               options={foodTypes}
               name='type'
-              default={this.state.type}
-              onChange={this.handleFoodTypeChange}
+              value={this.state.type}
+              onChange={(e) => this.handleFoodTypeChange(e)}
             >
             </Dropdown>
           </div>
@@ -107,8 +107,8 @@ class AddRestaurant extends Component {
               selection
               options={neighborhoods}
               name='type'
-              default={this.state.hood}
-              onChange={this.handleHoodChange}
+              value={this.state.hood}
+              onChange={(e) => this.handleHoodChange(e)}
             >
             </Dropdown>
           </div>
