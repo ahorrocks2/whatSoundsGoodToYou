@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
-import { Dropdown } from 'semantic-ui-react';
-import { Input } from 'semantic-ui-react'
+import { Button, Dropdown, Input, Form, Select } from 'semantic-ui-react';
 
 import PropTypes from 'prop-types';
 
@@ -49,7 +47,7 @@ class AddRestaurant extends Component {
 
     this.props.addFavorite(this.state);
 
-    this.setState(BLANK_RESTAURANT)
+    this.setState(BLANK_RESTAURANT);
   }
 
 
@@ -78,9 +76,10 @@ class AddRestaurant extends Component {
 
     return (
       <div className="App">
-        <form>
+        <Form onSubmit={this.handleSubmit}>
           <div>
-            <Input
+            <Form.Field
+              control={Input}
               placeholder='Restaurant Name'
               name='name'
               value={this.state.name}
@@ -89,31 +88,32 @@ class AddRestaurant extends Component {
           </div>
 
           <div>
-            <Dropdown
+            <Form.Field
+              control={Select}
               placeholder='Food Type'
-              selection
-              search
               options={foodTypes}
               name='type'
-              default={this.state.type}
+              value={this.state.type}
               onChange={this.handleFoodTypeChange}
             >
-            </Dropdown>
+            </Form.Field>
           </div>
 
           <div>
-            <Dropdown
+            <Form.Field
+              control={Select}
               placeholder='Neighborhood'
-              selection
               options={neighborhoods}
               name='type'
-              default={this.state.hood}
+              value={this.state.hood}
               onChange={this.handleHoodChange}
             >
-            </Dropdown>
+            </Form.Field>
           </div>
-          <Button basic color="blue" type='submit' onClick={this.handleSubmit}>Add Restaurant</Button>
-        </form>
+          <Form.Field>
+            <Form.Button basic color="blue" content='Submit'>Add Restaurant</Form.Button>
+          </Form.Field>
+        </Form>
       </div>
     );
   }
