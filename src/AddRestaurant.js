@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Dropdown, Input, Form, Select } from 'semantic-ui-react';
+import { Input, Form, Select } from 'semantic-ui-react';
 
 import PropTypes from 'prop-types';
 
