@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import rp from 'request-promise';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import './App.css';
 
@@ -8,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import AddRestaurant from './AddRestaurant';
 import HeaderPresenter from './HeaderPresenter';
-import DisplayFavoriteRestaurant from './DisplayFavoriteRestaurant';
+import DisplayFavoriteRestaurants from './DisplayFavoriteRestaurants';
 import Roulette from './Roulette';
 
 let API_KEY = 'ba91e2f7b4c7b52bef1710bd85500437';
@@ -33,8 +32,9 @@ class App extends Component {
 		});
 	};
 
-	selectRandomRestaurant = numOfRestaurants => {
-		if (numOfRestaurants === 0) return;
+	selectRandomRestaurant = () => {
+		const numOfRestaurants = this.state.restaurants.length;
+		if (numOfRestaurants < 1) return;
 
 		this.setState(state => {
 			const max = numOfRestaurants - 1;
@@ -78,29 +78,18 @@ class App extends Component {
 
 	render() {
 		return (
-			<MuiThemeProvider>
-				<div className="App">
-					<HeaderPresenter />
-					<AddRestaurant addFavorite={this.handleAddFavorite} />
-
-					{this.state.restaurants.map(restaurant => {
-						return (
-							<DisplayFavoriteRestaurant
-								key={restaurant.id}
-								restaurant={restaurant}
-								/>
-						);
-					})}
-
-					<Roulette
-						restaurants={this.state.restaurants}
-						resultObject={this.state.randomRestaurant}
-						menuUrl={this.state.menuUrl}
-						handleRestaurantRoulette={() => this.selectRandomRestaurant(this.state.restaurants.length)}
-						generateRandomRestaurant={() => this.generateRandomRestaurant()}
-					/>
-				</div>
-			</MuiThemeProvider>
+			<div className="App">
+				<HeaderPresenter />
+				<AddRestaurant addFavorite={this.handleAddFavorite} />
+				<Roulette
+					restaurants={this.state.restaurants}
+					resultObject={this.state.randomRestaurant}
+					menuUrl={this.state.menuUrl}
+					handleRestaurantRoulette={() => this.selectRandomRestaurant()}
+					generateRandomRestaurant={() => this.generateRandomRestaurant()}
+				/>
+			<DisplayFavoriteRestaurants restaurants={this.state.restaurants}	/>
+			</div>
 		);
 	}
 }

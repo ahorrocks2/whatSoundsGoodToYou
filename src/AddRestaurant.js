@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+import { Input, Form, Select } from 'semantic-ui-react';
 
 import PropTypes from 'prop-types';
 
@@ -31,15 +28,15 @@ class AddRestaurant extends Component {
     });
   }
 
-  handleHoodChange = (event, index, value) => {
+  handleHoodChange = (event) => {
     this.setState({
-      hood: value
+      hood: event.target.textContent
     });
   }
 
-  handleFoodTypeChange = (event, index, value) => {
+  handleFoodTypeChange = (event) => {
     this.setState({
-      type: value
+      type: event.target.textContent
     });
   }
 
@@ -50,17 +47,40 @@ class AddRestaurant extends Component {
 
     this.props.addFavorite(this.state);
 
-    this.setState(BLANK_RESTAURANT)
+    this.setState(BLANK_RESTAURANT);
   }
 
+
   render() {
+    const foodTypes = [
+      { key: 'Indian', value: 'Indian', text: 'Indian' },
+      { key: 'Chinese', value: 'Chinese', text: 'Chinese' },
+      { key: 'American', value: 'American', text: 'American' },
+      { key: 'Thai', value: 'Thai', text: 'Thai' },
+      { key: 'Breakfast/Brunch', value: 'Breakfast/Brunch', text: 'Breakfast/Brunch' },
+      { key: 'Vietnamese', value: 'Vietnamese', text: 'Vietnamese' },
+      { key: 'Japanese', value: 'Japanese', text: 'Japanese' },
+      { key: 'Mexican', value: 'Mexican', text: 'Mexican' },
+      { key: 'Russian', value: 'Russian', text: 'Russian' },
+      { key: 'Italian', value: 'Italian', text: 'Italian' },
+      { key: 'French', value: 'French', text: 'French' },
+      { key: 'Greek', value: 'Greek', text: 'Greek' },
+    ];
+
+    const neighborhoods = [
+      { key: 'Northwest', value: 'Northwest', text: 'Northwest' },
+      { key: 'Northeast', value: 'Northeast', text: 'Northeast' },
+      { key: 'Southwest', value: 'Southwest', text: 'Southwest' },
+      { key: 'Southeast', value: 'Southeast', text: 'Southeast' },
+    ];
+
     return (
       <div className="App">
-        <form>
+        <Form onSubmit={this.handleSubmit}>
           <div>
-            <TextField
-              hintText='Restaurant Name'
-              underlineFocusStyle={{borderColor: '#9FA8DA'}}
+            <Form.Field
+              control={Input}
+              placeholder='Restaurant Name'
               name='name'
               value={this.state.name}
               onChange={(e) => this.handleChange(e, "name")}
@@ -68,46 +88,32 @@ class AddRestaurant extends Component {
           </div>
 
           <div>
-            <SelectField
-              hintText='Food Type'
-              underlineFocusStyle={{borderColor: '#5C6BC0'}}
+            <Form.Field
+              control={Select}
+              placeholder='Food Type'
+              options={foodTypes}
               name='type'
               value={this.state.type}
-              onChange={this.handleFoodTypeChange}
+              onChange={(e) => this.handleFoodTypeChange(e)}
             >
-              <MenuItem value="Indian" primaryText="Indian" />
-              <MenuItem value="Chinese" primaryText="Chinese" />
-              <MenuItem value="American" primaryText="American" />
-              <MenuItem value="Thai" primaryText="Thai" />
-              <MenuItem value="Breakfast" primaryText="Breakfast" />
-              <MenuItem value="Vietnamese" primaryText="Vietnamese" />
-              <MenuItem value="Japanese" primaryText="Japanese" />
-              <MenuItem value="Mexican" primaryText="Mexican" />
-              <MenuItem value="Russian" primaryText="Russian" />
-              <MenuItem value="Italian" primaryText="Italian" />
-              <MenuItem value="French" primaryText="French" />
-              <MenuItem value="Greek" primaryText="Greek" />
-            </SelectField>
+            </Form.Field>
           </div>
 
           <div>
-            <SelectField
-              hintText='Neighborhood'
-              underlineFocusStyle={{borderColor: '#3949AB'}}
-              name='hood'
+            <Form.Field
+              control={Select}
+              placeholder='Neighborhood'
+              options={neighborhoods}
+              name='type'
               value={this.state.hood}
-              onChange={this.handleHoodChange}
+              onChange={(e) => this.handleHoodChange(e)}
             >
-              <MenuItem value="Northwest" primaryText="Northwest" />
-              <MenuItem value="Northeast" primaryText="Northeast" />
-              <MenuItem value="Southwest" primaryText="Southwest" />
-              <MenuItem value="Southeast" primaryText="Southeast" />
-              <MenuItem value="North Portland" primaryText="North Portland" />
-            </SelectField>
+            </Form.Field>
           </div>
-
-          <RaisedButton default={true} type='submit' onClick={this.handleSubmit} label='Add Restuarant' />
-        </form>
+          <Form.Field>
+            <Form.Button basic color="blue" content='Submit'>Add Restaurant</Form.Button>
+          </Form.Field>
+        </Form>
       </div>
     );
   }
