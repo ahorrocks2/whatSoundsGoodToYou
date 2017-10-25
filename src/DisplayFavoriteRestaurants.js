@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List, Accordion } from 'semantic-ui-react';
+import { Accordion } from 'semantic-ui-react';
 
 import RestaurantDetails from './RestaurantDetails';
 
