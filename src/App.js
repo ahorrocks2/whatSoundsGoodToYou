@@ -32,8 +32,9 @@ class App extends Component {
 		});
 	};
 
-	selectRandomRestaurant = numOfRestaurants => {
-		if (numOfRestaurants === 0) return;
+	selectRandomRestaurant = () => {
+		const numOfRestaurants = this.state.restaurants.length;
+		if (numOfRestaurants < 1) return;
 
 		this.setState(state => {
 			const max = numOfRestaurants - 1;
@@ -80,14 +81,14 @@ class App extends Component {
 			<div className="App">
 				<HeaderPresenter />
 				<AddRestaurant addFavorite={this.handleAddFavorite} />
-				<DisplayFavoriteRestaurants restaurants={this.state.restaurants}	/>
 				<Roulette
 					restaurants={this.state.restaurants}
 					resultObject={this.state.randomRestaurant}
 					menuUrl={this.state.menuUrl}
-					handleRestaurantRoulette={() => this.selectRandomRestaurant(this.state.restaurants.length)}
+					handleRestaurantRoulette={() => this.selectRandomRestaurant()}
 					generateRandomRestaurant={() => this.generateRandomRestaurant()}
 				/>
+			<DisplayFavoriteRestaurants restaurants={this.state.restaurants}	/>
 			</div>
 		);
 	}
