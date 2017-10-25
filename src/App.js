@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import rp from 'request-promise';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import './App.css';
 
@@ -78,7 +77,6 @@ class App extends Component {
 
 	render() {
 		return (
-			<MuiThemeProvider>
 				<div className="App">
 					<HeaderPresenter />
 					<AddRestaurant addFavorite={this.handleAddFavorite} />
@@ -100,7 +98,6 @@ class App extends Component {
 						generateRandomRestaurant={() => this.generateRandomRestaurant()}
 					/>
 				</div>
-			</MuiThemeProvider>
 		);
 	}
 }
