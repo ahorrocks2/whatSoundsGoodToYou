@@ -5,7 +5,7 @@ import RestaurantDetails from './RestaurantDetails';
 
 class ListFavorites extends Component {
 	state = {
-		activeIndex: 0
+		activeIndex: null
 	}
 
 	handleClick = (e, titleProps) => {
@@ -22,15 +22,15 @@ class ListFavorites extends Component {
 		const { activeIndex } = this.state;
 
 		return (
-			<div className="App">
+			<div className="App" style={{display: this.props.isVisible ? 'block' : 'none'}}>
 				<Accordion fluid styled>
 					{this.props.restaurants.map(restaurant => (
-						<div>
+						<div key={restaurant.id}>
 							<Accordion.Title
 								active={activeIndex === this.getIndex(restaurant)}
 								index={this.props.restaurants.indexOf(restaurant)}
 								onClick={this.handleClick}
-								>
+							>
 								<h2>{restaurant.name}</h2>
 							</Accordion.Title>
 

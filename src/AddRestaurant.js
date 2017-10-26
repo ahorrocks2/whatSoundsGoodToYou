@@ -111,7 +111,7 @@ class AddRestaurant extends Component {
             </Form.Field>
           </div>
           <Form.Field>
-            <Form.Button basic color="blue" content='Submit'>Add Restaurant</Form.Button>
+            <Form.Button fluid color="grey">Add Restaurant</Form.Button>
           </Form.Field>
         </Form>
       </div>

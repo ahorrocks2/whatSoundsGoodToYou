@@ -9,11 +9,13 @@ const Roulette = props => {
 		<div className="App">
       <div>
         {
-          (props.restaurants.length > 0) && <Button basic color='teal' onClick={props.handleRestaurantRoulette}>ROULETTE!</Button>
+          (props.restaurants.length > 0) &&
+          <Button.Group>
+            <Button onClick={props.handleRestaurantRoulette}>Randomly Select A Favorite</Button>
+            <Button.Or />
+            <Button onClick={props.generateRandomRestaurant}>Surprise me</Button>
+          </Button.Group>
         }
-      </div>
-      <div>
-        <Button basic color='teal' onClick={props.generateRandomRestaurant}>Random</Button>
       </div>
 
 			{result && <h1>You must go to: {props.resultObject.name}</h1>}

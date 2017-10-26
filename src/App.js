@@ -16,7 +16,8 @@ class App extends Component {
 	state = {
 		restaurants: [],
 		randomRestaurant: {},
-		menuUrl: ''
+		menuUrl: '',
+		displayList: true
 	};
 
 	static PropTypes = {
@@ -27,7 +28,9 @@ class App extends Component {
 	handleAddFavorite = restaurant => {
 		this.setState(state => {
 			return {
-				restaurants: [...state.restaurants, { ...restaurant, id: Date.now() }]
+				restaurants: [...state.restaurants, { ...restaurant, id: Date.now() }],
+				displayList: true,
+				randomRestaurant: {}
 			};
 		});
 	};
@@ -43,7 +46,8 @@ class App extends Component {
 
 			return {
 				randomRestaurant,
-				menuUrl: ''
+				menuUrl: '',
+				displayList: false
 			};
 		});
 	};
@@ -71,7 +75,8 @@ class App extends Component {
 		this.setState(state => {
 			return {
 				randomRestaurant,
-				menuUrl: restaurant.menu_url
+				menuUrl: restaurant.menu_url,
+				displayList: false
 			}
 		});
 	}
@@ -81,6 +86,7 @@ class App extends Component {
 			<div className="App">
 				<HeaderPresenter />
 				<AddRestaurant addFavorite={this.handleAddFavorite} />
+				<DisplayFavoriteRestaurants restaurants={this.state.restaurants} isVisible={this.state.displayList}/>
 				<Roulette
 					restaurants={this.state.restaurants}
 					resultObject={this.state.randomRestaurant}
@@ -88,7 +94,7 @@ class App extends Component {
 					handleRestaurantRoulette={() => this.selectRandomRestaurant()}
 					generateRandomRestaurant={() => this.generateRandomRestaurant()}
 				/>
-			<DisplayFavoriteRestaurants restaurants={this.state.restaurants}	/>
+
 			</div>
 		);
 	}
