@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import AddRestaurant from './AddRestaurant';
 import HeaderPresenter from './HeaderPresenter';
-import DisplayFavoriteRestaurants from './DisplayFavoriteRestaurants';
+import DisplayFavoriteRestaurants from './DisplayFavoriteRestaurants/DisplayFavoriteRestaurants';
 import Roulette from './Roulette';
 
 let API_KEY = 'ba91e2f7b4c7b52bef1710bd85500437';

@@ -1,6 +1,6 @@
 import React from 'react';
 import DisplayFavoriteRestaurants from './DisplayFavoriteRestaurants';
-import RestaurantDetails from './RestaurantDetails';
+import RestaurantDetails from './RestaurantDetails/RestaurantDetails';
 import { shallow } from 'enzyme';
 import { Accordion } from 'semantic-ui-react';
 

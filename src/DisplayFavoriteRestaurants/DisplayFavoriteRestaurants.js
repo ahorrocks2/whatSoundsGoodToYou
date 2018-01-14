@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Accordion } from 'semantic-ui-react';
 
-import RestaurantDetails from './RestaurantDetails';
+import RestaurantDetails from './RestaurantDetails/RestaurantDetails';
 
 class ListFavorites extends Component {
 	state = {
