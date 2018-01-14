@@ -1,0 +1,412 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Roulette /> renders the roulette component 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Roulette
+    generateRandomRestaurant={[Function]}
+    handleRestaurantRoulette={[Function]}
+    menuUrl="www.menu.com"
+    restaurants={
+        Array [
+            Object {
+              "hood": "NorthEast",
+              "id": 1,
+              "name": "test rest",
+              "type": "indian",
+            },
+          ]
+    }
+    resultObject={
+        Object {
+            "name": "Generated Restaurant",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          <ButtonGroup>
+                    <Button
+                              as="button"
+                              className="rouletteButton"
+                              onClick={[Function]}
+                    >
+                              Randomly Select A Favorite
+                    </Button>
+                    <ButtonOr />
+                    <Button
+                              as="button"
+                              className="randomButton"
+                              onClick={[Function]}
+                    >
+                              Surprise me
+                    </Button>
+          </ButtonGroup>
+</div>,
+        <h1>
+          You must go to: 
+          Generated Restaurant
+</h1>,
+        <h2>
+          Check out the 
+          <a
+                    href="www.menu.com"
+          >
+                    menu.
+          </a>
+</h2>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <ButtonGroup>
+            <Button
+                        as="button"
+                        className="rouletteButton"
+                        onClick={[Function]}
+            >
+                        Randomly Select A Favorite
+            </Button>
+            <ButtonOr />
+            <Button
+                        as="button"
+                        className="randomButton"
+                        onClick={[Function]}
+            >
+                        Surprise me
+            </Button>
+</ButtonGroup>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <Button
+                as="button"
+                className="rouletteButton"
+                onClick={[Function]}
+>
+                Randomly Select A Favorite
+</Button>,
+              <ButtonOr />,
+              <Button
+                as="button"
+                className="randomButton"
+                onClick={[Function]}
+>
+                Surprise me
+</Button>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "as": "button",
+                "children": "Randomly Select A Favorite",
+                "className": "rouletteButton",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Randomly Select A Favorite",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "as": "button",
+                "children": "Surprise me",
+                "className": "randomButton",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Surprise me",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "You must go to: ",
+            "Generated Restaurant",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "You must go to: ",
+          "Generated Restaurant",
+        ],
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Check out the ",
+            <a
+              href="www.menu.com"
+>
+              menu.
+</a>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Check out the ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "menu.",
+              "href": "www.menu.com",
+            },
+            "ref": null,
+            "rendered": "menu.",
+            "type": "a",
+          },
+        ],
+        "type": "h2",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <ButtonGroup>
+                        <Button
+                                    as="button"
+                                    className="rouletteButton"
+                                    onClick={[Function]}
+                        >
+                                    Randomly Select A Favorite
+                        </Button>
+                        <ButtonOr />
+                        <Button
+                                    as="button"
+                                    className="randomButton"
+                                    onClick={[Function]}
+                        >
+                                    Surprise me
+                        </Button>
+            </ButtonGroup>
+</div>,
+          <h1>
+            You must go to: 
+            Generated Restaurant
+</h1>,
+          <h2>
+            Check out the 
+            <a
+                        href="www.menu.com"
+            >
+                        menu.
+            </a>
+</h2>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ButtonGroup>
+              <Button
+                            as="button"
+                            className="rouletteButton"
+                            onClick={[Function]}
+              >
+                            Randomly Select A Favorite
+              </Button>
+              <ButtonOr />
+              <Button
+                            as="button"
+                            className="randomButton"
+                            onClick={[Function]}
+              >
+                            Surprise me
+              </Button>
+</ButtonGroup>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <Button
+                  as="button"
+                  className="rouletteButton"
+                  onClick={[Function]}
+>
+                  Randomly Select A Favorite
+</Button>,
+                <ButtonOr />,
+                <Button
+                  as="button"
+                  className="randomButton"
+                  onClick={[Function]}
+>
+                  Surprise me
+</Button>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "as": "button",
+                  "children": "Randomly Select A Favorite",
+                  "className": "rouletteButton",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Randomly Select A Favorite",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "as": "button",
+                  "children": "Surprise me",
+                  "className": "randomButton",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Surprise me",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "You must go to: ",
+              "Generated Restaurant",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "You must go to: ",
+            "Generated Restaurant",
+          ],
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Check out the ",
+              <a
+                href="www.menu.com"
+>
+                menu.
+</a>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Check out the ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "menu.",
+                "href": "www.menu.com",
+              },
+              "ref": null,
+              "rendered": "menu.",
+              "type": "a",
+            },
+          ],
+          "type": "h2",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

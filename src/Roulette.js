@@ -6,14 +6,14 @@ const Roulette = props => {
   const menu = props.menuUrl.length > 0 ? true : false;
 
 	return (
-		<div className="App">
+		<div>
       <div>
         {
           (props.restaurants.length < 1) ? <Button fluid basic color="grey" onClick={props.generateRandomRestaurant}>Just Tell Me Where To Go</Button> :
             <Button.Group>
-              <Button onClick={props.handleRestaurantRoulette}>Randomly Select A Favorite</Button>
+              <Button className="rouletteButton" onClick={props.handleRestaurantRoulette}>Randomly Select A Favorite</Button>
               <Button.Or />
-              <Button onClick={props.generateRandomRestaurant}>Surprise me</Button>
+              <Button className="randomButton" onClick={props.generateRandomRestaurant}>Surprise me</Button>
             </Button.Group>
         }
       </div>
