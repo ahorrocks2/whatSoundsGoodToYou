@@ -25,7 +25,7 @@ class ListFavorites extends Component {
 			<div className="App" style={{display: this.props.isVisible ? 'block' : 'none'}}>
 				<Accordion fluid styled>
 					{this.props.restaurants.map(restaurant => (
-						<div key={restaurant.id}>
+						<div className="restaurantDetails" key={restaurant.id}>
 							<Accordion.Title
 								active={activeIndex === this.getIndex(restaurant)}
 								index={this.props.restaurants.indexOf(restaurant)}
