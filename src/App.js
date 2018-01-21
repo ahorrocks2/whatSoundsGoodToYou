@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import rp from 'request-promise';
-
 import './App.css';
+import { getRandomRestaurantData } from './server.js';
 
 import PropTypes from 'prop-types';
 
@@ -9,8 +8,6 @@ import AddRestaurant from './AddRestaurant';
 import HeaderPresenter from './HeaderPresenter';
 import DisplayFavoriteRestaurants from './DisplayFavoriteRestaurants/DisplayFavoriteRestaurants';
 import Roulette from './Roulette';
-
-let API_KEY = process.env.ZOMATO_API_KEY;
 
 class App extends Component {
 	state = {
@@ -53,15 +50,7 @@ class App extends Component {
 	};
 
 	generateRandomRestaurant = async () => {
-		const listOfRestaurants = await rp({
-			method: 'GET',
-			uri: 'https://developers.zomato.com/api/v2.1/search?entity_id=286&entity_type=city&count=20&lat=-122.6804827&lon=45.5505162&radius=4000',
-			headers: {
-				'Accept': 'application/json',
-				'user-key': API_KEY
-			},
-			json: true
-		});
+		const listOfRestaurants = await getRandomRestaurantData();
 
 		const randomIndex = Math.floor(Math.random() * 20);
 		const restaurant = listOfRestaurants.restaurants[randomIndex].restaurant;
