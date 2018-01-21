@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const { join } = require('path');
 const assets = join(__dirname, 'build');
+require('dotenv').config();
+
 
 app.use(express.static(assets));
 
