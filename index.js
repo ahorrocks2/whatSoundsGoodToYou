@@ -7,7 +7,7 @@ const assets = join(__dirname, 'build');
 
 require('dotenv').config();
 const ZOMATO_API_KEY = process.env.ZOMATO_API_KEY;
-
+const MONGO_API_KEY = process.env.MONGO_API_KEY;
 
 app.use(express.static(assets));
 
@@ -31,6 +31,20 @@ app.get('/api/randomRestaurant', async (request, response) => {
     response.send(results);
   } catch(error) {
     console.error("Error retrieving restaurants from zomato: ", error);
+  }
+});
+
+app.get('/api/restaurants', async (request, response) => {
+  try {
+    const results = await rp({
+      method: 'GET',
+      uri: `https://api.mlab.com/api/1/databases/favorite-restaurants/collections/restaurants?apiKey=${MONGO_API_KEY}`,
+      json: true
+    });
+  
+    response.send(results);
+  } catch(error) {
+    console.error("Error retrieving db data: ", error);
   }
 });
 

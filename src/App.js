@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getRandomRestaurantData } from './server.js';
+import { getRandomRestaurantData, getAllFavoriteRestaurants, postFavoriteRestaurant } from './server.js';
 
 import PropTypes from 'prop-types';
 
@@ -15,6 +15,17 @@ class App extends Component {
 		randomRestaurant: {},
 		menuUrl: '',
 		displayList: true
+	};
+	
+	componentDidMount () {
+		getAllFavoriteRestaurants().then(result => {
+			this.setState(state => {
+				return {
+					...state,
+					restaurants: result
+				};
+			});
+		});
 	};
 
 	static PropTypes = {
