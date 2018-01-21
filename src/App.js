@@ -34,12 +34,17 @@ class App extends Component {
 	};
 
 	handleAddFavorite = restaurant => {
-		this.setState(state => {
-			return {
-				restaurants: [...state.restaurants, { ...restaurant, id: Date.now() }],
-				displayList: true,
-				randomRestaurant: {}
-			};
+		postFavoriteRestaurant(restaurant).then(result => {
+			getAllFavoriteRestaurants().then(result => {
+				this.setState(state => {
+					return {
+						...state,
+						restaurants: result,
+						displayList: true,
+						randomRestaurant: {}
+					};
+				});
+			})
 		});
 	};
 

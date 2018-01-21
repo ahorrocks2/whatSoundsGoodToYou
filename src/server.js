@@ -18,7 +18,7 @@ export function getAllFavoriteRestaurants () {
 
 export function postFavoriteRestaurant (details) {
   return rp({
-    uri: `http://localhost:1000/restaurant`,
+    uri: `http://localhost:1000/api/restaurant`,
     method: 'POST',
     json: true,
     body: details
