@@ -1,10 +1,9 @@
 import * as rp from 'request-promise';
-const PORT = process.env.PORT || 1000;
-const HOST = process.env.HOST || `http://localhost:${PORT}`;
+const PORT = process.env.PORT || `http://localhost:1000`;
 
 export function getRandomRestaurantData () {
   return rp({
-    uri: `${HOST}/api/randomRestaurant`,
+    uri: `${PORT}/api/randomRestaurant`,
     method: 'GET',
     json: true
   });
@@ -12,7 +11,7 @@ export function getRandomRestaurantData () {
 
 export function getAllFavoriteRestaurants () {
   return rp({
-    uri: `${HOST}/api/restaurants`,
+    uri: `${PORT}/api/restaurants`,
     method: 'GET',
     json: trues
   });
@@ -20,7 +19,7 @@ export function getAllFavoriteRestaurants () {
 
 export function postFavoriteRestaurant (details) {
   return rp({
-    uri: `${HOST}/api/restaurant`,
+    uri: `${PORT}/api/restaurant`,
     method: 'POST',
     json: true,
     body: details
