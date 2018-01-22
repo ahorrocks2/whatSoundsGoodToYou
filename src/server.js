@@ -13,7 +13,7 @@ export function getAllFavoriteRestaurants () {
   return rp({
     uri: `${PORT}/api/restaurants`,
     method: 'GET',
-    json: trues
+    json: true
   });
 }
 
