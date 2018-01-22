@@ -1,7 +1,8 @@
 {
-  "name": "what_sounds_good_to_you",
-  "version": "0.1.0",
-  "private": true,
+  "name": "what_sounds_good_to_you_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
   "engines": {
     "node": "8.9.0"
   },
@@ -9,24 +10,11 @@
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-scripts": "1.0.12",
-    "react-test-renderer": "^15.6.2",
-    "request": "^2.81.0",
-    "request-promise": "^4.2.1",
-    "semantic-ui-react": "^0.74.2"
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   },
   "scripts": {
-    "start": "npm run build && node index.js",
-    "react": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "prettier": "^1.6.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-15": "^1.0.5"
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm --production=false && npm run build"
   }
 }

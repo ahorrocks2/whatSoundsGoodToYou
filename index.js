@@ -5,7 +5,7 @@ const rp = require('request-promise');
 var bodyParser = require('body-parser')
 
 const PORT = process.env.PORT || 1000;
-const assets = join(__dirname, 'build');
+const assets = join(__dirname, 'client/build');
 
 require('dotenv').config();
 const ZOMATO_API_KEY = process.env.ZOMATO_API_KEY;
@@ -45,6 +45,7 @@ app.get('/api/restaurants', async (request, response) => {
       json: true
     });
   
+    console.log("Restaurants retrieved successfully.");
     response.send(results);
   } catch(error) {
     console.error("Error retrieving db data: ", error);
