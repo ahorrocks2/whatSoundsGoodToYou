@@ -16,11 +16,7 @@
   },
   "scripts": {
     "start": "node index.js",
-<<<<<<< HEAD
     "react": "react-scripts start",
-=======
-    "start:react": "react-scripts start",
->>>>>>> master
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
