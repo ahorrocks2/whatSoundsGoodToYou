@@ -18,7 +18,7 @@
     "semantic-ui-react": "^0.74.2"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "npm run build && node index.js",
     "react": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
