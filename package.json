@@ -15,8 +15,8 @@
     "semantic-ui-react": "^0.74.2"
   },
   "scripts": {
-    "start:server": "node index.js",
-    "start": "react-scripts start",
+    "start": "node index.js",
+    "react": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
