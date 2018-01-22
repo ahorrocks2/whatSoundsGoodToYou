@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-    "engines": {
+  "engines": {
     "node": "9.0.0"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "heroku-ssl-redirect": "0.0.4",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
   },

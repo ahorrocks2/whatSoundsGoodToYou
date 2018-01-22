@@ -1,4 +1,5 @@
 const express = require('express');
+const sslRedirect = require('heroku-ssl-redirect');
 const app = express();
 const { join } = require('path');
 const rp = require('request-promise');
@@ -13,6 +14,7 @@ const MONGO_API_KEY = process.env.MONGO_API_KEY;
 
 app.use(express.static(assets));
 app.use(bodyParser.json());
+app.use(sslRedirect());
 
 app.get('/', (request, response) => {
   response.sendFile(__dirname, '/index.html')
