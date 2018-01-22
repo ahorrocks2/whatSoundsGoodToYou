@@ -4,7 +4,7 @@ const { join } = require('path');
 const rp = require('request-promise');
 var bodyParser = require('body-parser')
 
-
+const PORT = process.env.PORT || 1000;
 const assets = join(__dirname, 'build');
 
 require('dotenv').config();
@@ -70,7 +70,7 @@ app.post('/api/restaurant', async (request, response) => {
   }
 });
 
-app.listen(1000, (err) => {
+app.listen(PORT, (err) => {
   if (err) {
     return console.log('Error: ', err)
   }

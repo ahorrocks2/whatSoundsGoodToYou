@@ -11,6 +11,5 @@ current functionality:
 todo functionality:
 - add validation to the form
   - get data on menu / hours for each of the "favorited" restaurants
-- add a data store
 - add mapping to show where the restaurant is
 - add filtering to the surprise me button (modified roulette)
