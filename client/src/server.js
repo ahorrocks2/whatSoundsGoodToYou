@@ -1,21 +1,26 @@
 import * as rp from 'request-promise';
-const PORT = process.env.PORT || `http://localhost:1000`;
+const hostname = window && window.location && window.location.hostname;
+const HOST = `https://${hostname}`;
 
 export function getRandomRestaurantData () {
   return rp({
-    uri: `${PORT}/api/randomRestaurant`,
+    uri: `${HOST}/api/randomRestaurant`,
     method: 'GET',
     json: true
   });
 }
 
 export function getAllFavoriteRestaurants () {
-  return fetch(`/api/restaurants`);
+  return rp({
+    uri: `${HOST}/api/restaurants`,
+    method: 'GET',
+    json: true
+  });
 }
 
 export function postFavoriteRestaurant (details) {
   return rp({
-    uri: `${PORT}/api/restaurant`,
+    uri: `${HOST}/api/restaurant`,
     method: 'POST',
     json: true,
     body: details
