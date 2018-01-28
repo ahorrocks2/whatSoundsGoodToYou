@@ -1,7 +1,9 @@
 language: node_js
+script: npm run build
 deploy:
   provider: heroku
   app: what-sounds-good-to-you
+  skip_cleanup: true
   on: 
     branch: master
   api_key:
