@@ -10,11 +10,7 @@ export function getRandomRestaurantData () {
 }
 
 export function getAllFavoriteRestaurants () {
-  return rp({
-    uri: `${PORT}/api/restaurants`,
-    method: 'GET',
-    json: true
-  });
+  return fetch(`/api/restaurants`);
 }
 
 export function postFavoriteRestaurant (details) {

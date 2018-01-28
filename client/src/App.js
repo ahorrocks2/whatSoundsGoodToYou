@@ -18,14 +18,15 @@ class App extends Component {
 	};
 	
 	componentDidMount () {
-		getAllFavoriteRestaurants().then(result => {
-			this.setState(state => {
-				return {
-					...state,
-					restaurants: result
-				};
+		getAllFavoriteRestaurants().then(result => result.json())
+			.then(result => {
+				this.setState(state => {
+					return {
+						...state,
+						restaurants: result
+					};
+				});
 			});
-		});
 	};
 
 	static PropTypes = {
