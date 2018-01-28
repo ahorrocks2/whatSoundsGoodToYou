@@ -1,5 +1,6 @@
 import * as rp from 'request-promise';
-const HOST = process.env.PORT;
+const hostname = window && window.location && window.location.hostname;
+const HOST = `https://${hostname}`;
 
 export function getRandomRestaurantData () {
   return rp({
