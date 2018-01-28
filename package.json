@@ -16,5 +16,8 @@
   "scripts": {
     "build": "cd client && npm install && npm run build",
     "start": "node index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
   }
 }
