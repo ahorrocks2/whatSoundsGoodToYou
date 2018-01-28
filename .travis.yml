@@ -1,5 +1,8 @@
 language: node_js
 deploy:
   provider: heroku
+  app: what-sounds-good-to-you
+  on: 
+    branch: master
   api_key:
     secure: VOHQ0m0TVDyLrDbK4B86O2yyaizfh4/ubXn5hq9mXlFCbx3U0pcZ959igKUB5j3kSbcjRBSOnPaNG0Y/IrrkO+DpTbwqMMsmq0xyG24IMtSFOQSOFoNsmh2PU76P+9Evatbt9jg8+4hynz8pxxLCBmXGsiCehRDmiNEf4iLf8tIH4u//Xx9xHHKadY9hukrsYmqhcUxeXU6BvPPmlQuSftMUrBMXrrErocnxjw1UZlNl9iyM3VT5VcXtAoe6MNV4kkcuJ6+ql8J1PU1Yomoz5tfNBBWDJnkZmAwDHHuySdD8jMcyrM9EHOdvdymKHcZKGdo9+8E5dC2LFLAB9AdhdUubCrwmHdGhzWEWbtSlgK7wr1qK3/QQdTndcMf+KTRX/mOllS+Ls4EYa55Ry+5Asx7RAMkXf4Sd5sHcr3Mf4zi1FFiLnAhtYbZNCqo70Wxtb2Lbh/fHa6w+4PKeuolGz6YD/iT6LrAlIJBHwq38xsU9fY/iDu58bFWsa9e8tz6HO+9Nj/+HA9+GT3eNlE/wb6ry9gJ3SqMdhVtcBEBX0pi3/oOD4jII58AehpFNXWjIE7j0W7dAipR6REcNGmWjAgIAxVAHkb0LvMBDllBUGS8ORzMkrLXdx+6lRpupKUTTfN8xqCiNi9VugiOIfVTguwfSzbCdLPR+swrjA950dWM=
