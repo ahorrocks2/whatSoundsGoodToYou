@@ -13,3 +13,5 @@ todo functionality:
   - get data on menu / hours for each of the "favorited" restaurants
 - add mapping to show where the restaurant is
 - add filtering to the surprise me button (modified roulette)
+
+
