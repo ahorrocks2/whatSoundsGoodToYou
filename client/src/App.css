@@ -2,12 +2,36 @@
   text-align: center;
 }
 
-.header {
-  color: #2a2a2a;
-  font-family: Roboto, sans-serif;
+.addForm {
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.rouletteButtons {
+  padding: 20px;
+}
+
+.otherText {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+.otherTextReversed {
+  font-family: 'Roboto', sans-serif;
+  color: grey;
+}
+
+.randomButtonText {
+  font-family: 'Roboto', sans-serif;
+  color: #D05353;
+}
+
+.headerText {
+  font-family: 'Rammetto One', sans-serif;
+  color: white;
+  padding: 20px;
+}
+
+.header {
+  color: #2a2a2a;
+  background-color: #D05353;
 }

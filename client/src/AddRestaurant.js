@@ -75,10 +75,11 @@ class AddRestaurant extends Component {
     ];
 
     return (
-      <div className="App">
-        <Form onSubmit={this.handleSubmit}>
+      <div>
+        <Form className="addForm" onSubmit={this.handleSubmit}>
           <div>
             <Form.Field
+              className="formInput"
               control={Input}
               placeholder='Restaurant Name'
               name='name'
@@ -111,7 +112,7 @@ class AddRestaurant extends Component {
             </Form.Field>
           </div>
           <Form.Field>
-            <Form.Button fluid color="grey">Add Restaurant</Form.Button>
+            <Form.Button fluid color="grey" className="addButton"><span className="otherText">add restaurant</span></Form.Button>
           </Form.Field>
         </Form>
       </div>
