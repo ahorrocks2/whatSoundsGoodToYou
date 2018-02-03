@@ -65,6 +65,7 @@ class AddRestaurant extends Component {
       { key: 'Italian', value: 'Italian', text: 'Italian' },
       { key: 'French', value: 'French', text: 'French' },
       { key: 'Greek', value: 'Greek', text: 'Greek' },
+      { key: 'Vegan', value: 'Vegan', text: 'Vegan' }
     ];
 
     const neighborhoods = [
